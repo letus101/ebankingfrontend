@@ -1,0 +1,81 @@
+<div class="container-fluid">
+    <!-- Stats Cards Row -->
+    <div class="row mb-4">
+        <div class="col-xl-3 col-sm-6">
+            <div class="card bg-white">
+                <div class="card-body d-flex align-items-center">
+                    <div class="me-3">
+                        <div class="avatar-sm bg-primary-subtle rounded">
+                            <i class="fas fa-users fa-lg text-primary"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-muted mb-1">Total Clients</p>
+                        <h4 class="mb-0">{{custCount || 0}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Charts Row -->
+    <div class="row">
+        <!-- Accounts Overview -->
+        <div class="col-xl-8">
+            <div class="card mb-4">
+                <div class="card-header border-0 d-flex align-items-center">
+                    <h5 class="card-title mb-0">Accounts Overview</h5>
+                </div>
+                <div class="card-body">
+                    <apx-chart
+                        [series]="series1"
+                        [chart]="chart1"
+                        [xaxis]="xaxis1"
+                        [yaxis]="yaxis1"
+                        [title]="title1"
+                        [fill]="fill1"
+                        [tooltip]="tooltip1">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+
+        <!-- Monthly Performance -->
+        <div class="col-xl-4">
+            <div class="card mb-4">
+                <div class="card-header border-0">
+                    <h5 class="card-title mb-0">Monthly Performance</h5>
+                </div>
+                <div class="card-body">
+                    <apx-chart
+                        [series]="series2"
+                        [chart]="chart2"
+                        [plotOptions]="plotOptions2"
+                        [colors]="colors2"
+                        [labels]="labels2"
+                        [legend]="legend2"
+                        [responsive]="responsive2">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Charts Row -->
+    <div class="row">
+        <!-- Operations Chart -->
+  
+
+        <!-- Client Distribution -->
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-header border-0">
+                    <h5 class="card-title mb-0">Client Distribution</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="data"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">New Customer</div>
+        <div class="card-body">
+          <form [formGroup]="newCustomerFormGroup" (ngSubmit)="handleSaveCustomer()">
+            <div class="mb-3">
+              <label class="form-label">Username:</label>
+              <input type="text" formControlName="username" class="form-control" />
+              <div class="text-danger" *ngIf="newCustomerFormGroup.get('username')?.touched && newCustomerFormGroup.get('username')?.errors">
+                <small *ngIf="newCustomerFormGroup.get('username')?.errors?.['required']">Username is required</small>
+                <small *ngIf="newCustomerFormGroup.get('username')?.errors?.['minlength']">Username must be at least 4 characters</small>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Password:</label>
+              <input type="password" formControlName="password" class="form-control" />
+              <div class="text-danger" *ngIf="newCustomerFormGroup.get('password')?.touched && newCustomerFormGroup.get('password')?.errors">
+                <small *ngIf="newCustomerFormGroup.get('password')?.errors?.['required']">Password is required</small>
+                <small *ngIf="newCustomerFormGroup.get('password')?.errors?.['minlength']">Password must be at least 6 characters</small>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Name:</label>
+              <input type="text" formControlName="name" class="form-control" />
+              <div class="text-danger" *ngIf="newCustomerFormGroup.get('name')?.touched && newCustomerFormGroup.get('name')?.errors">
+                <small *ngIf="newCustomerFormGroup.get('name')?.errors?.['required']">Name is required</small>
+                <small *ngIf="newCustomerFormGroup.get('name')?.errors?.['minlength']">Name must be at least 4 characters</small>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Surname:</label>
+              <input type="text" formControlName="surName" class="form-control" />
+              <div class="text-danger" *ngIf="newCustomerFormGroup.get('surName')?.touched && newCustomerFormGroup.get('surName')?.errors">
+                <small *ngIf="newCustomerFormGroup.get('surName')?.errors?.['required']">Surname is required</small>
+                <small *ngIf="newCustomerFormGroup.get('surName')?.errors?.['minlength']">Surname must be at least 4 characters</small>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Email:</label>
+              <input type="email" formControlName="email" class="form-control" />
+              <div class="text-danger" *ngIf="newCustomerFormGroup.get('email')?.touched && newCustomerFormGroup.get('email')?.errors">
+                <small *ngIf="newCustomerFormGroup.get('email')?.errors?.['required']">Email is required</small>
+                <small *ngIf="newCustomerFormGroup.get('email')?.errors?.['email']">Please enter a valid email address</small>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Phone Number:</label>
+              <input type="text" formControlName="phoneNumber" class="form-control" />
+              <div class="text-danger" *ngIf="newCustomerFormGroup.get('phoneNumber')?.touched && newCustomerFormGroup.get('phoneNumber')?.errors?.['required']">
+                Phone Number is required
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Address:</label>
+              <input type="text" formControlName="adresse" class="form-control" />
+              <div class="text-danger" *ngIf="newCustomerFormGroup.get('adresse')?.touched && newCustomerFormGroup.get('adresse')?.errors?.['required']">
+                Address is required
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Image URL:</label>
+              <input type="text" formControlName="image" class="form-control" />
+            </div>
+
+            <button [disabled]="!newCustomerFormGroup.valid" class="btn btn-primary">
+              Save
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
