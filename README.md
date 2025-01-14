@@ -95,7 +95,7 @@ Le fichier `environment.ts` contient les configurations nécessaires:
 - MIME Abdelhakim
 - TAKI Oussama
 - FARID Oussama
-- REZOUK Walid
+- RAZZOUK Walid
 
 ## Licence
 Ce projet est sous licence MIT
